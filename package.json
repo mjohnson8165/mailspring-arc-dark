@@ -1,0 +1,12 @@
+{
+  "name": "ui-arc-dark",
+  "displayName": "Arc Dark",
+  "theme": "ui",
+  "version": "0.0.1",
+  "description": "A clean adaptation of Arc Theme for Mailspring.",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  },
+  "private": true
+}

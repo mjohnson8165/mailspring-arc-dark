@@ -1,0 +1,227 @@
+@import 'variables';
+.column-MessageList {
+	background: @arc-dark;
+}
+
+#message-list {
+	.footer-reply-area-wrap {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+	}
+	.thread-icon,
+	.mail-important-icon,
+	.draft-icon {
+		-webkit-filter: brightness(100) !important;
+		filter: brightness(100) !important;
+	} // Mail header
+	.message-header {
+		position: relative;
+		padding: 19px 0; // Dark background
+		&::before {
+			position: absolute;
+			top: 0;
+			left: -20px;
+			right: -20px;
+			height: 100%;
+			content: "";
+			display: block;
+			background: darken(@arc-dark, 2%);
+			border-radius: @base-border-radius @base-border-radius 0 0;
+			z-index: -9999;
+		}
+	}
+	.message-item-wrap {
+		.message-item-white-wrap {
+			background: lighten(@arc-dark, 2%);
+			color: @arc-light;
+			&.composer-outer-wrap {
+				background: darken(@arc-dark, 2%) !important;
+				&.focused {
+					box-shadow: none;
+				}
+			}
+		}
+		&.collapsed {
+			.message-item-white-wrap {
+				background: darken(@arc-dark, 2%);
+				color: darken(@arc-light, 20%);
+			}
+		}
+	}
+	.minified-bundle {
+		// Stack of messages in thread
+		.msg-line {
+			background: darken(@arc-dark, 2%);
+			border-color: darken(@arc-dark, 4%);
+			color: darken(@arc-light, 20%);
+		} // Stack counter
+		.num-messages {
+			background: @arc-dark;
+			border-color: darken(@arc-dark, 4%);
+			color: darken(@arc-light, 20%);
+		}
+	} // Labels
+	.mail-label.removable {
+		-webkit-filter: none;
+		filter: none;
+		margin-right: 4px;
+		font-size: 0.85em;
+		color: @arc-light !important;
+		background: darken(@arc-dark, 3%) !important;
+		box-shadow: none !important;
+		&:hover {
+			color: @white !important;
+			img.x.content-mask {
+				background-color: @white !important;
+			}
+		}
+	}
+	.button-dropdown.bordered {
+		&>div {
+			background: transparent !important;
+			border-color: transparent !important;
+			img.content-mask {
+				background-color: @arc-lighter !important;
+			}
+			&:hover {
+				// border-color: @arc-light !important;
+				img.content-mask {
+					background-color: @white !important;
+				}
+			}
+		}
+		&:hover {
+			&>div {
+				backface-visibility: visible; // border-color: @white !important;
+			}
+		}
+		.secondary-items {
+			.menu {
+				.item {
+					background: lighten(@arc-dark, 5%);
+					&:hover {
+						background: @arc-accent !important;
+						color: @white !important;
+						img.content-mask {
+							background-color: @white !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.contenteditable-container {
+	spelling.misspelled {
+		background-image: linear-gradient(45deg, transparent, transparent 49%, rgba(255, 255, 255, 0.35) 49%, transparent 51%);
+	}
+}
+
+.signature-button-dropdown {
+	.menu {
+		&>div {
+			border: none !important;
+		}
+		.item.checked {
+			background-image: none !important;
+		}
+	}
+}
+
+.column-MessageListSidebar {
+	border: none;
+	color: @arc-light;
+	div[name=unsafe-component-wrapper] {
+		order: 2 !important;
+	}
+	.sidebar-participant-picker {
+		select {
+			background: transparent;
+			border: 1px solid transparent;
+		}
+	}
+	.participant-profile {
+		.profile-photo-wrap {
+			width: 70px;
+			height: 70px;
+			padding: 5px;
+			top: -46px;
+			left: calc(~'50% - 35px');
+			border-radius: 100%;
+			background: darken(@arc-dark, 3%);
+			box-shadow: none;
+			.profile-photo,
+			.default-profile-image {
+				line-height: 60px;
+				width: 60px;
+				height: 60px;
+				border-radius: 100%;
+				box-shadow: none;
+				background-image: none;
+			}
+			.personal-info {
+				padding-top: 50px;
+			}
+		}
+	}
+	.sidebar-section {
+		background: darken(@arc-dark, 3%);
+		border-radius: @base-border-radius;
+		border: none;
+		margin-top: -4px;
+		.related-threads {
+			margin-top: 0;
+			.related-thread:hover {
+				background: @arc-accent;
+				color: @white;
+			}
+		}
+		.btn {
+			background: transparent;
+			border: 1px solid @white;
+			box-shadow: none;
+			&:hover,
+			&:active {
+				background: @white;
+				color: @arc-dark;
+			}
+		}
+	}
+}
+
+iframe {
+	overflow: hidden !important
+}
+
+.ignore-in-parent-frame {
+	body {
+		color: @arc-light;
+		overflow: hidden !important;
+	}
+	img {
+		color: @arc-light;
+	}
+	blockquote {
+		border-color: lighten(@arc-dark, 20%) !important;
+	}
+	a {
+		transition: all .15s ease-in-out;
+		background: none !important;
+	}
+	.link-tracking-dot {
+		display: none;
+	}
+	hr {
+		border: none;
+		border-top: 1px solid darken(@arc-light, 40%);
+	}
+}
+
+.attachments-area {
+	.inner {
+		background: @arc-dark;
+		color: @arc-lighter;
+	}
+}
