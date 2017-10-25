@@ -17,6 +17,21 @@
 			filter: invert(100%) brightness(300%) !important;
 		}
 	}
+	&.keyboard-cursor {
+		border-left: 4px solid @arc-accent;
+		&.selected {
+			border-left: 4px solid @white;
+		}
+	}
+	.checkmark .inner {
+		border-color: darken(@arc-light, 40%);
+	}
+	&.selected {
+		.checkmark .inner {
+			background-color: transparent;
+			border: 1px solid @white;
+		}
+	}
 }
 
 .thread-list {
@@ -27,6 +42,10 @@
 			.draft-icon {
 				-webkit-filter: brightness(100) !important;
 				filter: brightness(100) !important;
+			}
+			.thread-icon-star {
+				-webkit-filter: invert(1) brightness(999999999) !important;
+				filter: invert(1) brightness(999999999) !important;
 			}
 			&.focused:hover .list-column-HoverActions .inner {
 				color: @white !important;
@@ -65,6 +84,7 @@
 			.list-column {
 				border-bottom: 0 !important;
 				padding-right: 0 !important;
+				padding-left: 16px;
 			}
 		}
 		.scroll-region-content .scroll-region-content-inner .list-rows {
@@ -127,6 +147,17 @@
 		&:hover {
 			background: @white;
 			color: darken(@arc-dark, 5%);
+		}
+	}
+}
+
+.layout-mode-list {
+	.sheet-toolbar {
+		.toolbar-ThreadList {
+			.absolute {
+				border-color: transparent;
+				background: @arc-dark;
+			}
 		}
 	}
 }

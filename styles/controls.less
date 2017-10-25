@@ -47,7 +47,7 @@ body {
 }
 
 .sheet {
-	background: darken(@arc-dark, 5%) !important;
+	background: @arc-dark !important;
 }
 
 .composer-full-window .composer-inner-wrap .composer-action-bar-wrap {
@@ -61,6 +61,19 @@ body {
 		background: darken(@arc-dark, 5%) !important;
 		box-shadow: none !important;
 		border: none;
+	}
+}
+
+.tooltip {
+	.scroll-tooltip {
+		background: @arc-accent;
+		border: none;
+		&::after {
+			border-left-color: @arc-accent;
+			border-width: 10px;
+			margin-left: -1px;
+			margin-top: -10px;
+		}
 	}
 }
 
@@ -270,18 +283,4 @@ body.platform-win32 {
 	&.active {
 		background-color: lighten(@arc-light, 30%) !important;
 	}
-}
-
-.tooltip {
-	.scroll-tooltip {
-		background: @arc-accent;
-		border: none;
-		&::after {
-			border-left-color: @arc-accent;
-			border-width: 10px;
-			margin-left: -1px;
-			margin-top: -10px;
-		}
-	}
-
 }
