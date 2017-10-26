@@ -20,6 +20,10 @@ body {
 			.activity-toolbar-icon.content-mask {
 				background: @arc-accent;
 			}
+			.toolbar-Preferences {
+				background: darken(@arc-dark, 3%);
+				border-bottom: 1px solid darken(@arc-dark, 3%) !important;
+			}
 		}
 	}
 }
@@ -272,22 +276,65 @@ body.platform-win32 {
  */
 
 .appearance-mode {
+	background-color: transparent !important;
+	border: 1px solid lighten(@arc-dark, 20%) !important;
+	color: @arc-light;
+	img.content-mask {
+		background-color: @white !important;
+	}
 	&.active {
-		background-color: lighten(@arc-light, 30%) !important;
+		background-color: @arc-accent !important;
+		color: @white !important;
+		border: 1px solid @white !important;
 	}
 }
 
-
 .preferences-wrap {
-	.container-preference-tabs {
-		.preferences-tabs {
-			background: darken(@arc-dark, 3%) !important;
-			border-color: darken(@arc-dark, 5%);
+	.btn {
+		border-radius: @base-border-radius;
+		background: transparent;
+		color: @arc-light;
+		border: 1px solid @arc-light;
+		box-shadow: none;
+		&:hover {
+			color: @arc-dark;
+			border: 1px solid @white;
+			background: @white;
 		}
 	}
-	.preferences-content {
-		.scroll-region {
-			background: @arc-dark !important;
+	.container-preference-tabs {
+		border-bottom: 1px solid lighten(@arc-dark, 5%) !important;
+		.preferences-tabs {
+			background: darken(@arc-dark, 3%) !important;
+			border-bottom: none !important;
+			.item {
+				&.active {
+					background: @arc-dark;
+					border: 1px solid darken(@arc-dark, 4%);
+					border-bottom: 2px solid @arc-dark;
+					margin-bottom: -1px;
+				}
+			}
+		}
+	}
+	.preferences-content.scroll-region {
+		background: @arc-dark !important;
+		// Accounts tab
+		.items-wrapper {
+			border: 1px solid lighten(@arc-dark, 20%) !important;
+			background: none;
+		}
+		// Subscription tab
+		.identity-content-box {
+			color: @arc-light;
+			border-radius: @base-border-radius;
+			border: 1px solid lighten(@arc-dark, 20%) !important;
+			.padded {
+				border-top: 1px solid lighten(@arc-dark, 20%) !important;
+				&:first-child {
+					border: none !important;
+				}
+			}
 		}
 	}
 	.container-general {
@@ -305,6 +352,7 @@ body.platform-win32 {
 /**
  * Tutorial bubble
  */
+
 .tutorial-tip.visible {
 	background: @arc-accent;
 	&:after {
