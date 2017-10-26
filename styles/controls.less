@@ -3,6 +3,12 @@
 	margin-right: 10px;
 }
 
+select {
+	background: transparent;
+	padding: @base-border-radius;
+	border-radius: @base-border-radius;
+}
+
 body {
 	.sheet-toolbar {
 		border-bottom: none;
@@ -270,6 +276,31 @@ body.platform-win32 {
 		background-color: lighten(@arc-light, 30%) !important;
 	}
 }
+
+
+.preferences-wrap {
+	.container-preference-tabs {
+		.preferences-tabs {
+			background: darken(@arc-dark, 3%) !important;
+			border-color: darken(@arc-dark, 5%);
+		}
+	}
+	.preferences-content {
+		.scroll-region {
+			background: @arc-dark !important;
+		}
+	}
+	.container-general {
+		.local-data {
+			.btn {
+				border-radius: @base-border-radius;
+				margin: 4px 8px 0 0;
+				background: transparent;
+			}
+		}
+	}
+}
+
 
 /**
  * Tutorial bubble
