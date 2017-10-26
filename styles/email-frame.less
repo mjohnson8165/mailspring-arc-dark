@@ -10,6 +10,7 @@
 }
 
 #message-list {
+
 	.footer-reply-area-wrap {
 		background: transparent;
 		border: none;
@@ -20,6 +21,7 @@
 	.draft-icon {
 		-webkit-filter: brightness(100) !important;
 		filter: brightness(100) !important;
+		align-self: flex-start;
 	} // Mail header
 	.message-header {
 		position: relative;
@@ -35,6 +37,15 @@
 			background: darken(@arc-dark, 2%);
 			border-radius: @base-border-radius @base-border-radius 0 0;
 			z-index: -9999;
+		}
+	}
+	.message-subject-wrap {
+		line-height: 1.65em !important;
+		.message-subject {
+			line-height: 1.65em !important;
+		}
+		.message-icons-wrap {
+			align-self: flex-end;
 		}
 	}
 	.message-item-wrap {
@@ -230,5 +241,20 @@ iframe {
 	.inner {
 		background: @arc-dark;
 		color: @arc-lighter;
+	}
+}
+
+.layout-mode-list {
+	.sheet-toolbar {
+		.toolbar-MessageList {
+			.item-back {
+				.item-back-title {
+					color: @arc-light;
+				}
+				.content-mask {
+					background-color: @arc-light;
+				}
+			}
+		}
 	}
 }
