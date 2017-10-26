@@ -4,6 +4,18 @@
 	padding-left: 30px;
 }
 
+
+/*
+.list-container .list-item {
+	background: none;
+}
+
+.thread-list .list-item,
+.draft-list .list-item {
+	background: none;
+}
+ */
+
 .list-item.list-tabular-item {
 	.btn.action {
 		box-shadow: none !important;
@@ -39,13 +51,8 @@
 	}
 }
 
+.thread-list,
 .draft-list {
-	.timestamp {
-		opacity: 1;
-	}
-}
-
-.thread-list {
 	.timestamp {
 		opacity: 1;
 	}
@@ -103,14 +110,17 @@
 		}
 		.scroll-region-content .scroll-region-content-inner .list-rows {
 			.list-item {
-				&.unread {
-					color: @arc-lighter !important;
-				}
 				cursor: pointer !important;
 				box-sizing: border-box;
 				background-color: @arc-dark !important;
 				color: lighten(@arc-dark, 40%) !important;
 				border-bottom: 1px solid darken(@arc-dark, 3%);
+				&.unread {
+					color: @arc-lighter !important;
+				}
+				.participants.no-recipients {
+					color: inherit;
+				}
 				.mail-label {
 					-webkit-filter: none;
 					filter: none;
@@ -133,6 +143,10 @@
 					.list-column-HoverActions .inner {
 						color: @white !important;
 						background-image: linear-gradient( 90deg, fadeout(darken(@arc-accent, 3%), 100%) 0%, darken(@arc-accent, 3%) 35%);
+					}
+					.participants.no-recipients {
+						color: @white;
+						opacity: 0.35;
 					}
 				}
 			}
@@ -171,7 +185,8 @@
 
 .layout-mode-list {
 	.sheet-toolbar {
-		.toolbar-ThreadList {
+		.toolbar-ThreadList,
+		.toolbar-DraftList {
 			.absolute {
 				border-color: transparent;
 				background: @arc-dark;
