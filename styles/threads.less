@@ -32,9 +32,23 @@
 			border: 1px solid @white;
 		}
 	}
+	.details {
+		.snippet {
+			opacity: .35;
+		}
+	}
+}
+
+.draft-list {
+	.timestamp {
+		opacity: 1;
+	}
 }
 
 .thread-list {
+	.timestamp {
+		opacity: 1;
+	}
 	.list-container {
 		.list-item {
 			.thread-icon,
@@ -49,7 +63,7 @@
 			}
 			&.focused:hover .list-column-HoverActions .inner {
 				color: @white !important;
-				background-image: linear-gradient( 90deg, fadeout(@arc-dark, 100%) 0%, darken(@arc-dark, 3%) 85%);
+				background-image: linear-gradient( 90deg, fadeout(@arc-dark, 100%) 0%, darken(@arc-dark, 3%) 35%);
 				.action {
 					-webkit-filter: none;
 					filter: none;
@@ -69,7 +83,7 @@
 				}
 				.list-column-HoverActions .inner {
 					color: @white !important;
-					background-image: linear-gradient( 90deg, fadeout(@arc-dark, 100%) 0%, @arc-dark 85%);
+					background-image: linear-gradient( 90deg, fadeout(@arc-dark, 100%) 0%, @arc-dark 35%);
 					.action {
 						-webkit-filter: none;
 						filter: none;
@@ -95,7 +109,7 @@
 				cursor: pointer !important;
 				box-sizing: border-box;
 				background-color: @arc-dark !important;
-				color: darken(@arc-light, 20%) !important;
+				color: lighten(@arc-dark, 40%) !important;
 				border-bottom: 1px solid darken(@arc-dark, 3%);
 				.mail-label {
 					-webkit-filter: none;
@@ -114,8 +128,12 @@
 					}
 				}
 				&.selected {
-					color: @arc-lighter !important;
+					color: @white !important;
 					background-color: darken(@arc-accent, 3%) !important;
+					.list-column-HoverActions .inner {
+						color: @white !important;
+						background-image: linear-gradient( 90deg, fadeout(darken(@arc-accent, 3%), 100%) 0%, darken(@arc-accent, 3%) 35%);
+					}
 				}
 			}
 		}
@@ -157,6 +175,39 @@
 			.absolute {
 				border-color: transparent;
 				background: @arc-dark;
+			}
+		}
+	}
+}
+
+.thread-search-bar {
+	.menu.showing-query.search-container.showing-suggestions {
+		.content-container {
+			background: darken(@arc-dark, 3%);
+			.item {
+				color: darken(@arc-light, 20%);
+				span {
+					.primary {
+						color: inherit;
+					}
+					.secondary {
+						color: darken(@arc-light, 40%);
+					}
+				}
+				&:hover {
+					color: @arc-light;
+					background: darken(@arc-dark, 5%);
+				}
+				&.divider {
+					background: darken(@arc-dark, 3%) !important;
+					color: darken(@arc-light, 10%);
+				}
+				&.selected {
+					border-radius: @base-border-radius;
+					.secondary {
+						color: rgba(255, 255, 255, 0.35) !important;
+					}
+				}
 			}
 		}
 	}
