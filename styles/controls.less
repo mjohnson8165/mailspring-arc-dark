@@ -284,3 +284,13 @@ body.platform-win32 {
 		background-color: lighten(@arc-light, 30%) !important;
 	}
 }
+
+/**
+ * Tutorial bubble
+ */
+.tutorial-tip.visible {
+	background: @arc-accent;
+	&:after {
+		border: 1px solid @arc-accent;
+	}
+}
