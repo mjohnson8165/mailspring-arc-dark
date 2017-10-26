@@ -10,7 +10,6 @@
 }
 
 #message-list {
-
 	.footer-reply-area-wrap {
 		background: transparent;
 		border: none;
@@ -97,9 +96,10 @@
 	.button-dropdown.bordered {
 		&>div {
 			background: transparent !important;
-			border-color: transparent !important;
+			border-color: lighten(@arc-dark, 20%) !important;
+			color: @arc-light !important;
 			img.content-mask {
-				background-color: @white !important;
+				background-color: @arc-light !important;
 			}
 			&:hover {
 				// border-color: @arc-light !important;
@@ -110,7 +110,10 @@
 		}
 		&:hover {
 			&>div {
-				backface-visibility: visible; // border-color: @white !important;
+				color: @white !important;
+				img.content-mask {
+					background-color: @white !important;
+				}
 			}
 		}
 		.secondary-items {

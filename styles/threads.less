@@ -90,11 +90,13 @@
 					}
 				}
 			}
+			/*
 			.list-column {
 				border-bottom: 0 !important;
-				padding-right: 0 !important;
-				padding-left: 16px;
+				padding-right: 4px !important;
+				padding-left: 8px;
 			}
+			*/
 		}
 		.scroll-region-content .scroll-region-content-inner .list-rows {
 			.list-item {
@@ -213,5 +215,31 @@
 				}
 			}
 		}
+	}
+}
+
+.layout-mode-list {
+	.thread-list,
+	.draft-list {
+		.list-container .list-item .list-column {
+			padding-left: 12px !important;
+			padding-right: 12px !important;
+		}
+	}
+	.scroll-region-content {
+		width: 99%;
+	}
+}
+
+.layout-mode-split {
+	.thread-list,
+	.draft-list {
+		.list-container .list-item .list-column {
+			padding-left: 4px !important;
+			padding-right: 8px !important;
+		}
+	}
+	.scroll-region-content {
+		width: 97%;
 	}
 }
